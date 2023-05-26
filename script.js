@@ -1,0 +1,183 @@
+setTimeout(function() {
+  var blankPage = document.getElementById('blank-page');
+  var actualSite = document.getElementById('actual-site');
+  var htmlname=document.documentElement;
+  var bodyname=document.body;
+  blankPage.style.display = 'none';
+  actualSite.style.display = 'block';
+  htmlname.style.overflow='auto';
+  bodyname.style.overflow='auto';
+}, 1000);
+window.onscroll = function() {myFunction()};
+face=document.getElementById('face')
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+var followDiv = document.getElementById("small-cursor");
+var followDiv1 = document.getElementById("big-cursor");
+var isMouseMoving = false;
+document.addEventListener("mousemove", function(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  followDiv.style.transform = `translate3d(${x}px, ${y-75}px, 0)`;  // Offset to center the div on the cursor
+  followDiv.style.visibility='visible';
+  followDiv1.style.transform = `translate3d(${x-6}px, ${y-81}px, 0)`;  // Offset to center the div on the cursor
+  followDiv1.style.visibility='visible';
+});
+function handleHover(x) {
+  if(x==1){
+  var cursor = document.getElementById("big-cursor");
+  cursor.style.transform = 'scale(2)';
+  }
+  else if(x==0){
+    var cursor = document.getElementById("big-cursor");
+    cursor.style.transform = 'scale(0.5)';
+    }
+}
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789.+_-=[];|\__<>:"'
+    this.update = this.update.bind(this)
+  }
+  setText(newText, limit = Infinity) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => (this.resolve = resolve))
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      const char = i < limit ? this.randomChar() : '' // Added limit check
+      this.queue.push({ from, to, start, end, char })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }  
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+const phrases = [
+  'a Mathematician.',
+  'a Programmer.',
+  'a Guitarist.',
+  'Human.',
+  'Nothing.',
+  'Happy.',
+  'ME.'
+]
+
+const el = document.querySelector('.face-glitch')
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter], 5).then(() => {
+    setTimeout(next, 2500)
+  })
+  counter = (counter + 1) % phrases.length
+}
+
+
+next()
+const canvas = document.getElementById('graph');
+const ctx = canvas.getContext('2d');
+
+const graphWidth = canvas.width;
+const graphHeight = canvas.height;
+const scale = 40;
+let amplitude = 0; // Updated dynamically based on vertical cursor movement
+let frequency = 0; // Updated dynamically based on horizontal cursor movement
+let phase = 0;
+
+const circleRadius = 30;
+let circleCenterX = circleRadius + 10; // Initial X position of the circle center
+let circleCenterY = graphHeight / 2; // Y position of the circle center
+let rotationAngle = 0;
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, graphWidth, graphHeight);
+}
+
+function drawSineGraph() {
+    clearCanvas();
+  
+    ctx.beginPath();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    for (let x = 0; x < graphWidth; x++) {
+        const radians = (x / scale) * frequency + phase;
+        const y = (Math.sin(radians) * amplitude) + graphHeight / 2;
+        if (x === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+    }
+    ctx.stroke();
+
+    phase += 0.03;
+}
+
+function updateAmplitude(e) {
+    const maxAmplitude = graphHeight / 2;
+    const cursorY = e.clientY - canvas.offsetTop;
+    amplitude = (maxAmplitude / (graphHeight / 2)) * (cursorY / 9);
+}
+
+function updateFrequency(e) {
+    const maxFrequency = 11;
+    const cursorX = e.clientX - canvas.offsetLeft;
+    frequency = (maxFrequency / (graphWidth / 2)) * (cursorX / 10);
+}
+
+
+face=document.getElementById('face')
+face.addEventListener('mousemove', function(e) {
+    updateAmplitude(e);
+    updateFrequency(e);
+});
+
+function animate() {
+    drawSineGraph();
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+console.log("I'm Running.")

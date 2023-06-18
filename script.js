@@ -1,3 +1,12 @@
+window.addEventListener("scroll", function() {
+  console.log("Hello");
+  var scrollPosition = window.scrollY || window.pageYOffset;
+  var pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var scrollPercentage = (scrollPosition / pageHeight) * 100;
+  var newWidth = scrollPercentage + "%";
+  document.getElementById("myBar").style.width = newWidth;
+});
+
 setTimeout(function() {
   var blankPage = document.getElementById('blank-page');
   var actualSite = document.getElementById('actual-site');
@@ -8,14 +17,7 @@ setTimeout(function() {
   htmlname.style.overflow='auto';
   bodyname.style.overflow='auto';
 }, 1000);
-window.onscroll = function() {myFunction()};
-face=document.getElementById('face')
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
+var face=document.getElementById('face');
 var followDiv = document.getElementById("small-cursor");
 var followDiv1 = document.getElementById("big-cursor");
 var isMouseMoving = false;
@@ -36,7 +38,7 @@ function handleHover(x) {
     var cursor = document.getElementById("big-cursor");
     cursor.style.transform = 'scale(0.5)';
     }
-}
+  }
 class TextScramble {
   constructor(el) {
     this.el = el
@@ -70,7 +72,7 @@ class TextScramble {
         complete++
         output += to
       } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
+        if (!char || Math.random() < 0.08) {
           char = this.randomChar()
           this.queue[i].char = char
         }
@@ -92,13 +94,14 @@ class TextScramble {
   }
 }
 const phrases = [
-  'a Mathematician.',
-  'a Programmer.',
-  'a Guitarist.',
-  'Human.',
-  'Nothing.',
-  'Happy.',
-  'ME.'
+  'Python',
+  'C++',
+  'SQL',
+  'Javascript',
+  'HTML',
+  'CSS',
+  'Java',
+  'Matlab'
 ]
 
 const el = document.querySelector('.face-glitch')
@@ -179,5 +182,42 @@ function animate() {
 }
 
 animate();
+const jobTitles = document.getElementsByClassName('job-heading');
+const jobImages = document.getElementsByClassName('job-image');
+const jobDeets = document.getElementsByClassName('job-deets');
+const imageLink = document.getElementsByClassName('link-image')
+const imageLink1 = document.getElementsByClassName('link-image-1')
+const imageLink2 = document.getElementsByClassName('link-image-2')
+const imageLink3 = document.getElementsByClassName('link-image-3')
+for (let i = 0; i < jobImages.length; i++) {
+  jobImages[i].addEventListener('mousemove', function () {
+    jobTitles[i].style.backgroundPosition = 'left';
+    jobTitles[i].style.color = 'black';
+    jobDeets[i].style.display = 'block';
+    if (i==0){
+    for (let j=0; j < imageLink1.length; j++){
+      imageLink1[j].style.display = 'block';
+    }}
+    else if(i==1){
+      for (let j=0; j < imageLink2.length; j++){
+        imageLink2[j].style.display = 'block';
+      }
+    }
+    else if(i==2){
+      for (let j=0; j < imageLink3.length; j++){
+        imageLink3[j].style.display = 'block';
+      }
+    }
+  });
+
+  jobImages[i].addEventListener('mouseout', function () {
+    jobTitles[i].style.backgroundPosition = '';
+    jobTitles[i].style.color = '';
+    jobDeets[i].style.display = 'none';
+    for (let j=0; j < imageLink.length; j++){
+      imageLink[j].style.display = 'none';
+    }
+  });
+}
 
 console.log("I'm Running.")

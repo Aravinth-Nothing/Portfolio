@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><title>Aravinth</title>
-</head>
-<body>
-  <div id="blank-page">
-    <h1 style="color: white; font-family: Raleway; font-weight: 100; margin-bottom: 100px;">Aravinth's Portfolio</h1>
-  </div>
-  <div id="actual-site" style="display: none;">
-  <div id="small-cursor"></div>
-  <div id="big-cursor"></div>
-    <nav id="navbar">
-      <div class="navbar-container">
-        <h1 class="navbar-heading">Aravinth</h1>
-        <ul class="navbar-links">
-          <li><a href="#blog" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Blog</a></li>
-          <li class="navbar-sep">|</li>
-          <li><a href="#projects" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Projects</a></li>
-          <li class="navbar-sep">|</li>
-          <li><a href="#jobs" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Jobs</a></li>
-        </ul>
-      </div>
-    </nav> 
-    <div class="progress-container">
-      <div class="progress-bar" id="myBar"></div>
-    </div>  
-    <div class="face"  id="face">
-      <div class="face-left">
-        <h1 class="face-head-font">I'm Aravinth,</h1>
-        <h1 class="face-head-font-sub">And I'm a Coder.</h1>
-      </div>
-      <div class="face-right">
-        <canvas id="graph" width="550" height="200"></canvas>
-      </div>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><title>Aravinth</title>
+  </head>
+  <body>
+    <div id="blank-page">
+      <h1 style="color: white; font-family: Raleway; font-weight: 100; margin-bottom: 100px;">Aravinth's Portfolio</h1>
     </div>
-    <div class="part-2">
+    <div id="actual-site" style="display: none;">
+      <div id="small-cursor"></div>
+      <div id="big-cursor"></div>
+      <nav id="navbar">
+        <div class="navbar-container">
+          <h1 class="navbar-heading">Aravinth</h1>
+          <ul class="navbar-links">
+            <li><a href="#blog" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Blog</a></li>
+            <li class="navbar-sep">|</li>
+            <li><a href="#projects" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Projects</a></li>
+            <li class="navbar-sep">|</li>
+            <li><a href="#jobs" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Experience</a></li>
+          </ul>
+        </div>
+      </nav> 
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>  
+      <div class="face"  id="face">
+        <div class="face-left">
+          <h1 class="face-head-font">I'm Aravinth,</h1>
+          <h1 class="face-head-font-sub" style="font-family: 'Nothing You Could Do', cursive; font-size: 2.5rem;">And I'm a Coder.</h1>
+        </div>
+        <div class="face-right">
+          <canvas id="graph" width="550" height="200"></canvas>
+        </div>
+      </div>
       <div class="sep-line"></div>
-      <div>
-      <h1 class="face-head-font face-glitch "></h1>
+      <div class="part-2">
+        <div class="glitch-container">
+          <h2 class="face-head-font" style="font-size: 2.5rem;">I code in</h2>
+          <h1 class="face-head-font face-glitch "></h1>
+        </div>
+      </div>
+      <div class="sep-line"></div>
+      <section>
+        <div class="sec-heading">
+      <h1 class="face-head-font" style="font-size: 4rem; text-align: center; font-weight: 100;;">Projects</h1>
     </div>
+      <div class="projects">
+        <div class="job1 job">
+          <h1 class="job-heading job-con">Ticketbooking App</h1>
+          <div class="job-image job-con job-image-1">
+            <h2 class="face-head-font-sub job-deets" style="color: black;">
+              Application to book tickets for Movies and Shows. 
+              <br>
+              Built using Python Flask, HTML, CSS, Bootstrap.
+            </h2>
+            <div class="job-link">
+              <a href="https://github.com/Aravinth-Nothing/Ticket-Booking" target="_blank"><img src="static/GitHub-logo.png" alt="" class="link-image-1 link-image"></a>
+              <a href="https://ticketbooking-app.aravinths1.repl.co/" target="_blank"><img src="static/replit-logo.webp" alt="" class="link-image-1 link-image"></a>
+            </div>
+          </div>
+        </div>
+        <div class="job2 job">
+          <h1 class="job-heading job-con">Sentiment Analysis</h1>
+          <div class="job-image job-image-2 job-con">
+            <h2 class="face-head-font-sub job-deets" style="color: black;">
+              Machine Learning Model to Predict emotion of a review.
+              <br>
+              Made using Python Scikit-Learn module (Support Vector Machine). 
+            </h2>
+            <div class="job-link">
+              <a href=""><img src="static/GitHub-logo.png" alt="" class="link-image-2 link-image"></a>
+            </div>
+          </div>
+        </div>
+        <div class="job3 job">
+          <h1 class="job-heading job-con">This Portfolio Site</h1>
+          <div class="job-image job-image-3 job-con">
+            <h2 class="face-head-font-sub job-deets" style="color: black;">
+              My Portfolio Site created to Showcase by Web-Dev Skills
+              <br>
+              Built From Scratch using HTML, CSS, Bootstrap.
+            </h2>
+            <div class="job-link">
+              <a href=""><img src="static/GitHub-logo.png" alt="" class="link-image-3 link-image"></a>
+              <a href=""><img src="static/replit-logo.webp" alt="" class="link-image-3 link-image"></a>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </section>
     </div>
-  </div>
     <script src="script.js"></script>
   </body>  
 </html>

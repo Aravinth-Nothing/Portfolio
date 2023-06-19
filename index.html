@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><title>Aravinth</title>
+    <link rel="icon" href="static/My-Logo-transparent.png">
   </head>
   <body>
     <div id="blank-page">
@@ -20,16 +22,20 @@
       <div id="big-cursor"></div>
       <nav id="navbar">
         <div class="navbar-container">
-          <h1 class="navbar-heading">Aravinth</h1>
+          <div class="logo-container">
+            <a href="https://www.aravinth.live"><img src="static/My-Logo-transparent.png" alt="My-Logo" class="navbar-logo"></a>
+            <h1 class="navbar-heading">Aravinth</h1>
+          </div>
           <ul class="navbar-links">
             <li><a href="#blog" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Blog</a></li>
             <li class="navbar-sep">|</li>
-            <li><a href="#projects" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Projects</a></li>
+            <li><a href="#projects" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Experience</a></li>
             <li class="navbar-sep">|</li>
-            <li><a href="#jobs" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Experience</a></li>
+            <li><a href="#projects-section" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Projects</a></li>
           </ul>
         </div>
-      </nav> 
+      </nav>
+      
       <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
       </div>  
@@ -46,14 +52,14 @@
       <div class="part-2">
         <div class="glitch-container">
           <h2 class="face-head-font" style="font-size: 2.5rem;">I code in</h2>
-          <h1 class="face-head-font face-glitch "></h1>
+          <h1 class="face-head-font face-glitch " id="projects-section"></h1>
         </div>
       </div>
       <div class="sep-line"></div>
-      <section>
-        <div class="sec-heading">
-      <h1 class="face-head-font" style="font-size: 4rem; text-align: center; font-weight: 100;;">Projects</h1>
-    </div>
+      <section class="projects-section">
+        <div class="title-container">
+          <h1 class="face-head-font title">Projects</h1>
+        </div>
       <div class="projects">
         <div class="job1 job">
           <h1 class="job-heading job-con">Ticketbooking App</h1>
@@ -96,9 +102,9 @@
             </div>
           </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </section>
+    <br><br><br><br><br><br><br><br>
     </div>
     <script src="script.js"></script>
   </body>  

@@ -12,9 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><title>Aravinth</title>
     <link rel="icon" href="static/My-Logo-transparent.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <div id="blank-page">
+    <div id="blank-page"> 
       <h1 style="color: white; font-family: Raleway; font-weight: 100; margin-bottom: 100px;">Aravinth's Portfolio</h1>
     </div>
     <div id="actual-site" style="display: none;">
@@ -26,6 +27,16 @@
             <a href="https://www.aravinth.live"><img src="static/My-Logo-transparent.png" alt="My-Logo" class="navbar-logo"></a>
             <h1 class="navbar-heading">Aravinth</h1>
           </div>
+          <div class="navbar-menu">
+            <div class="dropdown">
+              <button class="dropbtn">&#9776;</button>
+              <div class="dropdown-content">
+                <a href="#blog" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Blog</a>
+                <a href="#projects" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Experience</a>
+                <a href="#projects-section" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Projects</a>
+              </div>
+            </div>
+          </div>
           <ul class="navbar-links">
             <li><a href="#blog" onmouseover="handleHover(1)" onmouseout="handleHover(0)">Blog</a></li>
             <li class="navbar-sep">|</li>
@@ -35,14 +46,13 @@
           </ul>
         </div>
       </nav>
-      
       <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
       </div>  
       <div class="face"  id="face">
         <div class="face-left">
-          <h1 class="face-head-font">I'm Aravinth,</h1>
-          <h1 class="face-head-font-sub" style="font-family: 'Nothing You Could Do', cursive; font-size: 2.5rem;">And I'm a Coder.</h1>
+          <h1 class="face-head-font main-heading">I'm Aravinth.</h1>
+          <h1 class="face-head-font-sub main-heading-sub">And I'm a Coder.</h1>
         </div>
         <div class="face-right">
           <canvas id="graph" width="550" height="200"></canvas>
@@ -58,52 +68,77 @@
       <div class="sep-line"></div>
       <section class="projects-section">
         <div class="title-container">
-          <h1 class="face-head-font title">Projects</h1>
+          <h1 class="face-head-font title">Projects.</h1>
         </div>
-      <div class="projects">
-        <div class="job1 job">
-          <h1 class="job-heading job-con">Ticketbooking App</h1>
-          <div class="job-image job-con job-image-1">
-            <h2 class="face-head-font-sub job-deets" style="color: black;">
-              Application to book tickets for Movies and Shows. 
-              <br>
-              Built using Python Flask, HTML, CSS, Bootstrap.
-            </h2>
-            <div class="job-link">
-              <a href="https://github.com/Aravinth-Nothing/Ticket-Booking" target="_blank"><img src="static/GitHub-logo.png" alt="" class="link-image-1 link-image"></a>
-              <a href="https://ticketbooking-app.aravinths1.repl.co/" target="_blank"><img src="static/replit-logo.webp" alt="" class="link-image-1 link-image"></a>
+        <div class="projects">
+          <div class="job1 job">
+            <h1 class="job-heading job-con">Ticketbooking App</h1>
+            <div class="job-image job-con job-image-1">
+              <h2 class="face-head-font-sub job-deets" style="color: black;">
+                Application to book tickets for Movies and Shows. 
+                <br>
+                Built using Python Flask, HTML, CSS, Bootstrap.
+              </h2>
+              <div class="job-link">
+                <a href="https://github.com/Aravinth-Nothing/Ticket-Booking" target="_blank"><img src="static/GitHub-logo.png" alt="" class="link-image-1 link-image"></a>
+                <a href="https://ticketbooking-app.aravinths1.repl.co/" target="_blank"><img src="static/replit-logo.webp" alt="" class="link-image-1 link-image"></a>
+              </div>
+            </div>
+          </div>
+          <div class="job2 job">
+            <h1 class="job-heading job-con">Sentiment Analysis</h1>
+            <div class="job-image job-image-2 job-con">
+              <h2 class="face-head-font-sub job-deets" style="color: black;">
+                Machine Learning Model to Predict emotion of a review.
+                <br>
+                Made using Python Scikit-Learn module (Support Vector Machine). 
+              </h2>
+              <div class="job-link">
+                <a href="https://github.com/Aravinth-Nothing/Sentiment-Analysis" target="_blank"><img src="static/GitHub-logo.png" alt="" class="link-image-2 link-image"></a>
+              </div>
+            </div>
+          </div>
+          <div class="job3 job">
+            <h1 class="job-heading job-con">This Portfolio Site</h1>
+            <div class="job-image job-image-3 job-con">
+              <h2 class="face-head-font-sub job-deets" style="color: black;">
+                My Portfolio Site created to Showcase by Web-Dev Skills
+                <br>
+                Built From Scratch using HTML, CSS, Bootstrap.
+              </h2>
+              <div class="job-link">
+                <a href="https://github.com/Aravinth-Nothing/Portfolio" target="_blank"><img src="static/GitHub-logo.png" alt="" class="link-image-3 link-image"></a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="job2 job">
-          <h1 class="job-heading job-con">Sentiment Analysis</h1>
-          <div class="job-image job-image-2 job-con">
-            <h2 class="face-head-font-sub job-deets" style="color: black;">
-              Machine Learning Model to Predict emotion of a review.
-              <br>
-              Made using Python Scikit-Learn module (Support Vector Machine). 
-            </h2>
-            <div class="job-link">
-              <a href=""><img src="static/GitHub-logo.png" alt="" class="link-image-2 link-image"></a>
-            </div>
-          </div>
+      </section>
+      <div class="sep-line"></div>
+      <section class="exp-section">
+        <div class="title-container" style="background-color: #131313;">
+          <h1 class="face-head-font title">Experience.</h1>
         </div>
-        <div class="job3 job">
-          <h1 class="job-heading job-con">This Portfolio Site</h1>
-          <div class="job-image job-image-3 job-con">
-            <h2 class="face-head-font-sub job-deets" style="color: black;">
-              My Portfolio Site created to Showcase by Web-Dev Skills
-              <br>
-              Built From Scratch using HTML, CSS, Bootstrap.
-            </h2>
-            <div class="job-link">
-              <a href=""><img src="static/GitHub-logo.png" alt="" class="link-image-3 link-image"></a>
-              <a href=""><img src="static/replit-logo.webp" alt="" class="link-image-3 link-image"></a>
-            </div>
+        <div class="exp">
+          <div class="vertical-line">
+            <div id="white-ball"></div> <!-- Added white ball element -->
           </div>
+          <div class="exp1 exp-content face-head-font">
+            Agile <br> Health Technologies Ltd. 
+            <h2 style="font-size: 2rem; margin: 0px; font-weight: 100;">Machine Learning Intern</h2>
+            <h2 style="font-size: 1.5rem; margin: 0px; font-weight: 100;">December 2022 - January 2023</h2>
+          </div>
+          <!-- <div class="exp2 exp-content face-head-font">
+            Bgile
+          </div> -->
+          <div class="exptime1 exp-time face-head-font">
+            <img src="static/AHT-Logo.png" alt="" class="exp-image"> 
+          </div>
+          <!-- <div class="exptime2 exp-time face-head-font">
+            2023
+          </div> -->
         </div>
-      </div>
-    </section>
+      </section>
+      
     <br><br><br><br><br><br><br><br>
     </div>
     <script src="script.js"></script>

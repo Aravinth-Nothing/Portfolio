@@ -1,5 +1,4 @@
 window.addEventListener("scroll", function() {
-  console.log("Hello");
   var scrollPosition = window.scrollY || window.pageYOffset;
   var pageHeight = document.documentElement.scrollHeight - window.innerHeight;
   var scrollPercentage = (scrollPosition / pageHeight) * 100;

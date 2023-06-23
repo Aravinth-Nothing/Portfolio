@@ -162,7 +162,7 @@ html, body {
   font-weight: 500;
   letter-spacing: 1px;
   font-family: 'Raleway';
-  padding: 10px 15px;
+  padding: 10px;
   margin: 0 5px;
   transition: 0.3s ease-in-out;
   transform: translateX(0);
@@ -199,9 +199,9 @@ html, body {
   padding-top: 18%;
   padding-left: 18%;
 }
+
 #graph{
-  padding-top: 18%;
-  padding-left: 10%;
+  padding: 15% 11% 10% 11%;
 
 }
 .face{
@@ -229,10 +229,14 @@ html, body {
 .face-glitch{
   font-size: 4.5rem;
 }
+.face-glitch-mini{
+  font-size: 2.5rem;
+}
 .part-2{
   /* display: flex;
   flex-wrap: wrap; */
   height: 200px;
+  width: 100%;
   background-color: #131313;
   text-align: center;
   padding-top: 4%;
@@ -606,38 +610,63 @@ html, body {
   display: flex;
   align-items: center;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
+#menuButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  height: 50px;
+  width: 50px;
   background-color: transparent;
-  color: #ffffffd1;
-  font-size: 24px;
+  margin-right: 3%;
   border: none;
-  cursor: pointer;
 }
-
-.dropdown-content {
+#menuContent{
+  padding: 20% 0% 0% 0%;
+}
+.menu-link{
+  padding-left: 10%;
+  padding-bottom: 30%;
+}
+.small-line{
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
-.dropdown-content a {
-  color: #ffffffd1;
-  padding: 12px 16px;
+#menuContent {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #131313;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#menuContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+#menuContent a {
   text-decoration: none;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+  font-size: 2.5rem;
+  margin: 0px;
+  font-family: 'Raleway';  
+  color: #ffffffd1;
 }
 
 .progress-container {
@@ -655,18 +684,17 @@ html, body {
   width: 0%;
 }
 .face-left{
-  padding: 18% 2% 0% 9%;
+  padding: 10% 2% 0% 9%;
 }
 #graph{
-  padding-top: 25%;
-  padding-left: 10%;
+  padding: 15% 11% 10% 11%;
   width: 300px;
 }
 .face{
   margin-top: 70px;
   clear: both;
   width: 100%;
-  height: 650px;
+  height: 550px;
   display: block;
 }
 .face-head-font{
@@ -684,21 +712,22 @@ html, body {
   
 }
 .face-glitch{
-  font-size: 4.5rem;
+  font-size: 3rem;
 }
 .part-2{
-  height: 200px;
+  width: 100%;
+  height: 100%;
   background-color: #131313;
   text-align: center;
-  padding-top: 4%;
+  padding: 10% 0%;
 }
 .main-heading{
-  padding: 30% 0% 0% 0%;  
-  font-size: 4rem;
+  padding: 20% 0% 0% 0%;  
+  font-size: 4.5rem;
   line-height: 4.5rem;
 }
 .main-heading-sub{
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Nothing You Could Do', cursive; 
   padding-top: 0.5rem;
 }
@@ -740,6 +769,9 @@ html, body {
   white-space: nowrap;
   margin-bottom: 20px;
   transform: rotate(180deg);
+}
+.face-glitch-mini{
+  font-size: 2rem;
 }
 .projects {
   flex: 1;

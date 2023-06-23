@@ -166,14 +166,18 @@ function updateFrequency(e) {
     const cursorX = e.clientX - canvas.offsetLeft;
     frequency = (maxFrequency / (graphWidth / 2)) * (cursorX / 10);
 }
-
-
-face=document.getElementById('face')
+face=document.getElementById('face');
+if (window.innerWidth <= 600) {
+  // Mobile screen
+  amplitude = 15; // Set a fixed amplitude for mobile screens
+  frequency = 2; // Set a fixed frequency for mobile screens
+} 
+else{
 face.addEventListener('mousemove', function(e) {
     updateAmplitude(e);
     updateFrequency(e);
 });
-
+}
 function animate() {
     drawSineGraph();
 
@@ -218,5 +222,57 @@ for (let i = 0; i < jobImages.length; i++) {
     }
   });
 }
+const menuButton = document.getElementById('menuButton');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuContent = document.getElementById('menuContent');
+const smallLine = document.getElementsByClassName('small-line');
+let isMenuOpen = false;
+
+menuButton.addEventListener('click', () => {
+  if (isMenuOpen) {
+    menuContent.style.transform = 'translateX(100%)';
+    for (let i=0; i<smallLine.length; i++){
+      if(i==0){
+      smallLine[i].style.transform = 'rotate(0deg) translateY(0px) ';
+      }
+      if(i==1){
+        smallLine[i].style.display='';
+      }
+      if(i==2){
+        smallLine[i].style.transform = 'rotate(0deg) translateY(0px)';
+        }
+    }
+    setTimeout(() => {
+      menuOverlay.style.display = 'none';
+    }, 300);
+  } else {
+    menuOverlay.style.display = 'block';
+    setTimeout(() => {
+      menuContent.style.transform = 'translateX(0)';
+      for (let i=0; i<smallLine.length; i++){
+        if(i==0){
+        smallLine[i].style.transform = 'rotate(45deg) translateY(8px) ';
+        }
+        if(i==1){
+          smallLine[i].style.display='none';
+        }
+        if(i==2){
+          smallLine[i].style.transform = 'rotate(-45deg) translateY(-8px)';
+          }
+      }
+    }, 10);
+  }
+
+  isMenuOpen = !isMenuOpen;
+});
+
+menuOverlay.addEventListener('click', () => {
+  menuContent.style.transform = 'translateX(100%)';
+  setTimeout(() => {
+    menuOverlay.style.display = 'none';
+  }, 300);
+
+  isMenuOpen = false;
+});
 
 console.log("I'm Running.")

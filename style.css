@@ -516,7 +516,7 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
   color: #fff;
   transition: all 0.5s ease-in-out;
@@ -776,8 +776,8 @@ html, body {
 .projects {
   flex: 1;
   background-color: #010101;
-  padding: 20px 50px 100px 50px;
-  display: grid;
+  padding: 20px 0px 100px 0px;
+  display: block;
   grid-template-areas: 'a b' 'c c';
   gap: 70px;
   text-align: center;
@@ -785,8 +785,8 @@ html, body {
 
 .job{
   height: 250px;
-  width: 400px;
-  margin: auto;
+  width: fit-content;
+  margin: 0px;
   background-color: transparent;
 }
 .job1{
@@ -800,6 +800,7 @@ html, body {
 }
 .job-heading{
   background: linear-gradient(to left, rgba(0, 0, 0, 0) 51%, #ffffff 50%) right;
+  width: fit-content;
   background-size: 200%;
   text-decoration: none;
   font-size: 2rem;
@@ -817,9 +818,9 @@ html, body {
 }
 .job-image{
   text-align: left;
-  width: 300px;
-  height: 150px;
-  margin: auto;
+  width: 250px;
+  height: 125px;
+  margin: 30px 15px 30px 15px;
   transition: all 0.3s ease, background-color 1s ease;
   box-shadow: 10px 10px rgba(255, 255, 255, 0.148);
   background-size: cover;
@@ -834,8 +835,8 @@ html, body {
   background-image: url("static/portfolio.png");
 }
 .job-image:hover{
-  width: 370px;
-  height: 180px;
+  width: 270px;
+  height: 130px;
   background-image: none;
   background-color: white;
   box-shadow: 10px 10px rgba(255, 255, 255, 0.604); 

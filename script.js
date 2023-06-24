@@ -188,40 +188,119 @@ animate();
 const jobTitles = document.getElementsByClassName('job-heading');
 const jobImages = document.getElementsByClassName('job-image');
 const jobDeets = document.getElementsByClassName('job-deets');
-const imageLink = document.getElementsByClassName('link-image')
-const imageLink1 = document.getElementsByClassName('link-image-1')
-const imageLink2 = document.getElementsByClassName('link-image-2')
-const imageLink3 = document.getElementsByClassName('link-image-3')
-for (let i = 0; i < jobImages.length; i++) {
-  jobImages[i].addEventListener('mousemove', function () {
-    jobTitles[i].style.backgroundPosition = 'left';
-    jobTitles[i].style.color = 'black';
-    jobDeets[i].style.display = 'block';
-    if (i==0){
-    for (let j=0; j < imageLink1.length; j++){
-      imageLink1[j].style.display = 'block';
-    }}
-    else if(i==1){
-      for (let j=0; j < imageLink2.length; j++){
-        imageLink2[j].style.display = 'block';
-      }
-    }
-    else if(i==2){
-      for (let j=0; j < imageLink3.length; j++){
-        imageLink3[j].style.display = 'block';
-      }
-    }
-  });
+const imageLink = document.getElementsByClassName('link-image');
+const imageLink1 = document.getElementsByClassName('link-image-1');
+const imageLink2 = document.getElementsByClassName('link-image-2');
+const imageLink3 = document.getElementsByClassName('link-image-3');
 
-  jobImages[i].addEventListener('mouseout', function () {
+const elementState = [];
+
+function toggleDisplayPC(i) {
+  if (elementState[i]) {
     jobTitles[i].style.backgroundPosition = '';
     jobTitles[i].style.color = '';
     jobDeets[i].style.display = 'none';
-    for (let j=0; j < imageLink.length; j++){
+
+    for (let j = 0; j < imageLink.length; j++) {
       imageLink[j].style.display = 'none';
     }
+  } else {
+    jobTitles[i].style.backgroundPosition = 'left';
+    jobTitles[i].style.color = 'black';
+    jobDeets[i].style.display = 'block';
+
+    if (i === 0) {
+      for (let j = 0; j < imageLink1.length; j++) {
+        imageLink1[j].style.display = 'block';
+      }
+    } else if (i === 1) {
+      for (let j = 0; j < imageLink2.length; j++) {
+        imageLink2[j].style.display = 'block';
+      }
+    } else if (i === 2) {
+      for (let j = 0; j < imageLink3.length; j++) {
+        imageLink3[j].style.display = 'block';
+      }
+    }
+  }
+
+  // Invert the state
+  elementState[i] = !elementState[i];
+}
+
+function toggleDisplayMobile(i) {
+  if (elementState[i]) {
+    jobTitles[i].style.backgroundPosition = '';
+    jobTitles[i].style.color = '';
+    jobDeets[i].style.display = 'none';
+    jobImages[i].style.width = "250px";
+    jobImages[i].style.height = "125px";
+    jobImages[i].style.backgroundColor = "none";
+    jobImages[i].style.boxShadow = "10px 10px rgba(255, 255, 255, 0.148);";
+    if(i==0){
+      jobImages[i].style.backgroundImage = "url('static/ticketbooking\ app.png')";
+    }
+    else if(i==1){
+      jobImages[i].style.backgroundImage = "url('static/sentiment-analysis.png')";
+    }
+    else if(i==2){
+      jobImages[i].style.backgroundImage = "url('static/portfolio.png')";
+    }
+    for (let j = 0; j < imageLink.length; j++) {
+      imageLink[j].style.display = 'none';
+    }
+  } else {
+    jobTitles[i].style.backgroundPosition = 'left';
+    jobTitles[i].style.color = 'black';
+    jobDeets[i].style.display = 'block';
+    jobImages[i].style.width = "270px";
+    jobImages[i].style.height = "130px";
+    jobImages[i].style.backgroundImage = "none";
+    jobImages[i].style.backgroundColor = "white";
+    jobImages[i].style.boxShadow = "10px 10px rgba(255, 255, 255, 0.604)";
+    if (i === 0) {
+      for (let j = 0; j < imageLink1.length; j++) {
+        imageLink1[j].style.display = 'block';
+      }
+    } else if (i === 1) {
+      for (let j = 0; j < imageLink2.length; j++) {
+        imageLink2[j].style.display = 'block';
+      }
+    } else if (i === 2) {
+      for (let j = 0; j < imageLink3.length; j++) {
+        imageLink3[j].style.display = 'block';
+      }
+    }
+  }
+
+  // Invert the state
+  elementState[i] = !elementState[i];
+}
+// Initialize the element state to false (not toggled)
+for (let i = 0; i < jobImages.length; i++) {
+  elementState[i] = false;
+}
+
+// Mouse events
+for (let i = 0; i < jobImages.length; i++) {
+  jobImages[i].addEventListener('mouseover', function () {
+    toggleDisplayPC(i);
+  });
+
+  jobImages[i].addEventListener('mouseout', function () {
+    toggleDisplayPC(i);
   });
 }
+
+// Touch events for mobile devices
+for (let i = 0; i < jobImages.length; i++) {
+  jobImages[i].addEventListener('touchstart', function (event) {
+    // Prevents triggering both touch and mouse events simultaneously
+    event.preventDefault();
+    toggleDisplayMobile(i);
+  });
+}
+
 const menuButton = document.getElementById('menuButton');
 const menuOverlay = document.getElementById('menuOverlay');
 const menuContent = document.getElementById('menuContent');

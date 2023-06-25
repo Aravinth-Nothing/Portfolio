@@ -17,6 +17,7 @@
 }
 html{
   cursor: none;
+  scroll-behavior: smooth;
 }
 body {
   background-color: rgba(0, 0, 0, 0.884);
@@ -202,7 +203,8 @@ html, body {
 }
 
 #graph{
-  padding: 15% 11% 10% 11%;
+  padding: 15% 0% 10% 11%;
+  /* margin-right: 11%; */
 
 }
 .face{
@@ -291,7 +293,7 @@ html, body {
   padding: 20px 50px 100px 50px;
   display: grid;
   grid-template-areas: 'a b' 'c c';
-  gap: 70px;
+  gap: 6%;
   text-align: center;
 }
 
@@ -377,7 +379,7 @@ html, body {
 .link-image:hover{
   filter: invert(100%);
 }
-.exp-section {
+#exp-section {
   display: flex;
   width: 100%;
 }
@@ -442,6 +444,91 @@ html, body {
   margin: 0px; 
   font-weight: 100;
 }
+#contact-section{
+  height:250px;
+  display: flex;
+  flex:1;
+}
+.contact{
+  margin: 4% 13% 10% 37%;
+  display: grid;
+  grid-template-areas: 'g h i'
+                       'j j j';
+}
+.contact-heading{
+  text-align: center;
+  margin-top: 2%;
+  font-size: 2rem;
+}
+.contact-link{
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 20px;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+.contact-link:hover{
+  background-color: transparent;
+
+}
+.git{
+  background-image: url("static/GitHub-logo.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.git:hover{
+  filter: invert(100%);
+  grid-area: g;
+}
+.linkedin{
+  background-image: url("static/Linked-in-logo.png");
+  grid-area: h;
+}
+.mail{
+  background-image: url("static/mail-logo.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-area: i;
+}
+.mail:hover{
+  filter: invert(100%);
+}
+.end-mail{
+  grid-area: j;
+  color: white;
+  font-family: 'Cutive Mono', monospace;
+  text-decoration:none;
+  margin-top: 15px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 51%, #ffffff 50%) right;
+  background-size: 200%;
+  transition: 0.3s ease-in-out;
+  transform: translateX(0);
+  color: #ffffffd1;
+  position: block;
+  padding:10px;
+}
+.end-mail:hover{
+  color: #000;
+  background-position: left;
+  font-weight: 400;
+}
+.now{
+  width: 100%;
+  background-color: #000;
+}
+.now-text{
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 0px;
+  padding: 10px;
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 100;
+}
 }
 
 
@@ -454,6 +541,7 @@ body {
 html, body {
   margin: 0;
   overflow: hidden  ;
+  scroll-behavior: smooth;
 }
 
 #blank-page {
@@ -877,7 +965,7 @@ html, body {
 .link-image:hover{
   filter: invert(100%);
 }
-.exp-section {
+#exp-section {
   display: flex;
   width: 100%;
 }
@@ -947,4 +1035,68 @@ html, body {
   margin: 0px; 
   font-weight: 100;
 }
+#contact-section{
+  height:250px;
+  display: flex;
+  flex:1;
+}
+.contact{
+  margin: 15% 0% 15% 10%;
+  width: fit-content;
+  display: grid;
+  grid-template-areas: 'g h i'
+                       'j j j';
+}
+.contact-heading{
+  text-align: center;
+  margin-top: 2%;
+  font-size: 2rem;
+}
+.contact-link{
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  background-size: cover;
+  transition: all 0.3s ease;
+  
+}
+.contact-link:hover{
+  background-color: transparent;
+
+}
+.git{
+  background-image: url("static/GitHub-logo.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.git:hover{
+  filter: invert(100%);
+  grid-area: g;
+}
+.linkedin{
+  background-image: url("static/Linked-in-logo.png");
+  grid-area: h;
+}
+.mail{
+  background-image: url("static/mail-logo.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-area: i;
+}
+.mail:hover{
+  filter: invert(100%);
+}
+.end-mail{
+  grid-area: j;
+  color: white;
+  font-family: 'Cutive Mono', monospace;
+  text-decoration:none;
+  margin-top: 0px;
+  
+}
+
 }

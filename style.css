@@ -1098,5 +1098,17 @@ html, body {
   margin-top: 0px;
   
 }
-
+.now{
+  width: 100%;
+  background-color: #000;
+}
+.now-text{
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 0px;
+  padding: 10px;
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 100;
+}
 }

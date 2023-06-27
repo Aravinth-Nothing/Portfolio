@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^blog/?$ http://yourblogdomain.com [R=301,L]
